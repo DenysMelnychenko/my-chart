@@ -1,4 +1,4 @@
-apiVersion: v   2
+apiVersion: v2
 name: my-chart
 description: A Helm chart for Kubernetes
 
