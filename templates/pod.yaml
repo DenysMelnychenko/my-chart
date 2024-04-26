@@ -3,7 +3,9 @@ kind: Pod
 metadata:
   name: nginx-dedicated-school
   namespace: dedicated-school-d-melnychenko
-  labels: nginx-dedicated-school
+  labels:
+    app: myapp
+    release: "{{ .Release.Name }}"
 spec:
   containers:
   - name: nginx-container
