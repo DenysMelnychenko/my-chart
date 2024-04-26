@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+  namespace: dedicated-school-d-melnychenko
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/DenysMelnychenko/my-chart'
+    targetRevision: HEAD
+    path: '.'
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: 'dedicated-school-d-melnychenko'
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
